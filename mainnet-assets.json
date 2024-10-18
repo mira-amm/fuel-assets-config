@@ -6,8 +6,8 @@
     "icon": {
       "default": "https://verified-assets.fuel.network/images/eth.svg"
     },
-    "contractId": null,
-    "subId": null,
+    "contractId": "0x7e2becd64cd598da59b4d1064b711661898656c6b1f4918a787156b8965dc83c",
+    "subId": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "assetId": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07",
     "isVerified": true,
     "externalIds": {

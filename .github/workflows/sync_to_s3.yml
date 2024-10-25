@@ -1,0 +1,23 @@
+name: Deploy to prod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  s3-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/initialize
+        with:
+          aws_access_key: ${{ secrets.MIRA_AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.MIRA_AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy static site to S3 bucket
+        env:
+          BUCKET_NAME: 'fuel-assets-config'
+        run: aws s3 cp ./mainnet-assets.json s3://${{ env.BUCKET_NAME }}/mainnet-assets.json
